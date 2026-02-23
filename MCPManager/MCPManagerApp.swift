@@ -313,7 +313,7 @@ final class ServerViewModel {
     private var httpServer: HTTPServer?
     private let musicKitService = MusicKitService()
     private var router: MCPRequestRouter?
-    private let logger = Logger(subsystem: "com.mcpmanager.app", category: "App")
+    private let logger = Logger(subsystem: "pw.btv.osmcp", category: "App")
     private let serverPort: UInt16 = 9200
 
     var headerAddressText: String {

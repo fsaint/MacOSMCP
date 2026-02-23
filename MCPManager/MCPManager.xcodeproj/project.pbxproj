@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -59,11 +59,6 @@
 			isa = PBXGroup;
 			children = (
 				4BDE9377AC8EFC0F003B3F45 /* MCPManagerApp.swift */,
-				D7F5399E988FF09BA3F2C9E4 /* Models */,
-				83D50A3DFCCF4F5F025E5323 /* Server */,
-				1245F1D338A7FC0EB19107CA /* Services */,
-				4A26D70C99B663CAB056C4A0 /* Tools */,
-				66D1827C0573E607F2C99FC8 /* Utilities */,
 			);
 			name = MCPManager;
 			path = .;
@@ -170,7 +165,6 @@
 			);
 			mainGroup = 7E80775A3813D121F402BDB1;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -211,8 +205,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MCPManager.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A6MRYE94VC;
 				ENABLE_APP_SANDBOX = NO;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -220,7 +217,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcpmanager.app;
+				PRODUCT_BUNDLE_IDENTIFIER = pw.btv.osmcp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
@@ -287,8 +285,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MCPManager.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A6MRYE94VC;
 				ENABLE_APP_SANDBOX = NO;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -296,7 +297,8 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mcpmanager.app;
+				PRODUCT_BUNDLE_IDENTIFIER = pw.btv.osmcp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};

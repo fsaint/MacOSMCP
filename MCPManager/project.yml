@@ -1,6 +1,6 @@
 name: MCPManager
 options:
-  bundleIdPrefix: com.mcpmanager
+  bundleIdPrefix: pw.btv
   deploymentTarget:
     macOS: "14.0"
   xcodeVersion: "16.0"
@@ -23,7 +23,7 @@ targets:
           - Info.plist
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.mcpmanager.app
+        PRODUCT_BUNDLE_IDENTIFIER: pw.btv.osmcp
         INFOPLIST_FILE: Info.plist
         MARKETING_VERSION: "1.0.0"
         CURRENT_PROJECT_VERSION: "1"

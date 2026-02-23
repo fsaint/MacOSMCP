@@ -6,7 +6,7 @@ actor MCPRequestRouter {
     private let sessionStore = MCPSessionStore()
     private let toolRegistry: ToolRegistry
     private let activityLogger: ActivityLogger
-    private let logger = Logger(subsystem: "com.mcpmanager.app", category: "MCPRouter")
+    private let logger = Logger(subsystem: "pw.btv.osmcp", category: "MCPRouter")
 
     private let protocolVersion = "2025-03-26"
     private let serverInfo = MCPImplementation(name: "apple-music-mcp", version: "1.0.0")

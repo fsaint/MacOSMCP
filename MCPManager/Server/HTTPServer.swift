@@ -7,7 +7,7 @@ actor HTTPServer {
     private let host: NWEndpoint.Host
     private let port: UInt16
     private var listener: NWListener?
-    private let logger = Logger(subsystem: "com.mcpmanager.app", category: "HTTPServer")
+    private let logger = Logger(subsystem: "pw.btv.osmcp", category: "HTTPServer")
     private var requestHandler: (@Sendable (HTTPRequest) async -> HTTPResponse)?
 
     private(set) var isRunning = false

@@ -4,7 +4,7 @@ import os
 
 /// Central service for all Apple Music / MusicKit API calls.
 actor MusicKitService {
-    private let logger = Logger(subsystem: "com.mcpmanager.app", category: "MusicKit")
+    private let logger = Logger(subsystem: "pw.btv.osmcp", category: "MusicKit")
 
     // MARK: - Authorization
 
