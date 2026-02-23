@@ -1,0 +1,392 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		076420CF51DF6BB69164FEFC /* MCPTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB09E6156E7C50BE0056166 /* MCPTypes.swift */; };
+		238D8B180215892A63B98391 /* AppleMusicPlaylistTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13265460A7613F3A2B5A45ED /* AppleMusicPlaylistTool.swift */; };
+		2AA3E8C7566FD1E63F58C309 /* MCPManagerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDE9377AC8EFC0F003B3F45 /* MCPManagerApp.swift */; };
+		2FD542D2F101AEDE11040764 /* MCPSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424623626CFCD1B782724423 /* MCPSession.swift */; };
+		3F978BF975454410AE6CB5A7 /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6CE1D5EBEAE773E49EE281 /* HTTPRequest.swift */; };
+		51977898F4C88443E661A862 /* MCPRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AB635F048B06E50556A2F /* MCPRequestRouter.swift */; };
+		5388B05BBA683D75A7FA3299 /* AppleMusicSearchTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F974DE2E2092A836C7D86D /* AppleMusicSearchTool.swift */; };
+		5752D0C8AD08275868DC962C /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7A7864A214776FE8EDE13 /* HTTPResponse.swift */; };
+		67922605F7DED365E3F9E4E7 /* JSONRPCCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4162F45E37009BE6F02F552 /* JSONRPCCoder.swift */; };
+		787E432ABF3FF16D8566AEAB /* AppleMusicLibraryTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3098EFBD1FDC9062ADB825E /* AppleMusicLibraryTool.swift */; };
+		A42C90840646F220F1A38A1E /* ToolRegistry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E05841DFFA90470DBD08C66 /* ToolRegistry.swift */; };
+		A96ACA8FCCE871FB75B6A922 /* ActivityLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B61A6B695581CAFDB13135B /* ActivityLogger.swift */; };
+		B05893BE21310B8E32393F7D /* HTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2F7C8D2DD3A994D6B3534D /* HTTPServer.swift */; };
+		B8FC69930C5716A2B2EF0619 /* MusicKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FB18C88395528114037DA7 /* MusicKitService.swift */; };
+		BA725610CF4FB0BEF31872E5 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D846AC37D20D2260CFCEFB16 /* AnyCodable.swift */; };
+		E3986F8A0981358E4F643A71 /* AppleMusicCreatePlaylistTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D27484EF252B90D2AB1127 /* AppleMusicCreatePlaylistTool.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		13265460A7613F3A2B5A45ED /* AppleMusicPlaylistTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicPlaylistTool.swift; sourceTree = "<group>"; };
+		32A7A7864A214776FE8EDE13 /* HTTPResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
+		424623626CFCD1B782724423 /* MCPSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPSession.swift; sourceTree = "<group>"; };
+		498AB635F048B06E50556A2F /* MCPRequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPRequestRouter.swift; sourceTree = "<group>"; };
+		4BDE9377AC8EFC0F003B3F45 /* MCPManagerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPManagerApp.swift; sourceTree = "<group>"; };
+		74C2696A50D442E45774EEDA /* MCPManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCPManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75FB18C88395528114037DA7 /* MusicKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicKitService.swift; sourceTree = "<group>"; };
+		7E05841DFFA90470DBD08C66 /* ToolRegistry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolRegistry.swift; sourceTree = "<group>"; };
+		9B61A6B695581CAFDB13135B /* ActivityLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityLogger.swift; sourceTree = "<group>"; };
+		9E2F7C8D2DD3A994D6B3534D /* HTTPServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPServer.swift; sourceTree = "<group>"; };
+		AC6CE1D5EBEAE773E49EE281 /* HTTPRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		B1D27484EF252B90D2AB1127 /* AppleMusicCreatePlaylistTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicCreatePlaylistTool.swift; sourceTree = "<group>"; };
+		B4162F45E37009BE6F02F552 /* JSONRPCCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONRPCCoder.swift; sourceTree = "<group>"; };
+		B9F974DE2E2092A836C7D86D /* AppleMusicSearchTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicSearchTool.swift; sourceTree = "<group>"; };
+		BBB09E6156E7C50BE0056166 /* MCPTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCPTypes.swift; sourceTree = "<group>"; };
+		D3098EFBD1FDC9062ADB825E /* AppleMusicLibraryTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicLibraryTool.swift; sourceTree = "<group>"; };
+		D846AC37D20D2260CFCEFB16 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1245F1D338A7FC0EB19107CA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9B61A6B695581CAFDB13135B /* ActivityLogger.swift */,
+				75FB18C88395528114037DA7 /* MusicKitService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		201B2A04CE6DDA8DABED98DF /* MCPManager */ = {
+			isa = PBXGroup;
+			children = (
+				4BDE9377AC8EFC0F003B3F45 /* MCPManagerApp.swift */,
+				D7F5399E988FF09BA3F2C9E4 /* Models */,
+				83D50A3DFCCF4F5F025E5323 /* Server */,
+				1245F1D338A7FC0EB19107CA /* Services */,
+				4A26D70C99B663CAB056C4A0 /* Tools */,
+				66D1827C0573E607F2C99FC8 /* Utilities */,
+			);
+			name = MCPManager;
+			path = .;
+			sourceTree = "<group>";
+		};
+		4A26D70C99B663CAB056C4A0 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B1D27484EF252B90D2AB1127 /* AppleMusicCreatePlaylistTool.swift */,
+				D3098EFBD1FDC9062ADB825E /* AppleMusicLibraryTool.swift */,
+				13265460A7613F3A2B5A45ED /* AppleMusicPlaylistTool.swift */,
+				B9F974DE2E2092A836C7D86D /* AppleMusicSearchTool.swift */,
+				7E05841DFFA90470DBD08C66 /* ToolRegistry.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		66D1827C0573E607F2C99FC8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D846AC37D20D2260CFCEFB16 /* AnyCodable.swift */,
+				B4162F45E37009BE6F02F552 /* JSONRPCCoder.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6DA7985916DA6BC9419A74C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74C2696A50D442E45774EEDA /* MCPManager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E80775A3813D121F402BDB1 = {
+			isa = PBXGroup;
+			children = (
+				201B2A04CE6DDA8DABED98DF /* MCPManager */,
+				D7F5399E988FF09BA3F2C9E4 /* Models */,
+				83D50A3DFCCF4F5F025E5323 /* Server */,
+				1245F1D338A7FC0EB19107CA /* Services */,
+				4A26D70C99B663CAB056C4A0 /* Tools */,
+				66D1827C0573E607F2C99FC8 /* Utilities */,
+				6DA7985916DA6BC9419A74C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83D50A3DFCCF4F5F025E5323 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				AC6CE1D5EBEAE773E49EE281 /* HTTPRequest.swift */,
+				32A7A7864A214776FE8EDE13 /* HTTPResponse.swift */,
+				9E2F7C8D2DD3A994D6B3534D /* HTTPServer.swift */,
+				498AB635F048B06E50556A2F /* MCPRequestRouter.swift */,
+				424623626CFCD1B782724423 /* MCPSession.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		D7F5399E988FF09BA3F2C9E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBB09E6156E7C50BE0056166 /* MCPTypes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE21354A615EA736B0A4A7A2 /* MCPManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 550393C055BF2BA11646FEF2 /* Build configuration list for PBXNativeTarget "MCPManager" */;
+			buildPhases = (
+				9E7ADC734F328F85150FCD77 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MCPManager;
+			packageProductDependencies = (
+			);
+			productName = MCPManager;
+			productReference = 74C2696A50D442E45774EEDA /* MCPManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0B63480A1409731BD52934C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 96A5D718B356FEC040F09155 /* Build configuration list for PBXProject "MCPManager" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 7E80775A3813D121F402BDB1;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE21354A615EA736B0A4A7A2 /* MCPManager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E7ADC734F328F85150FCD77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A96ACA8FCCE871FB75B6A922 /* ActivityLogger.swift in Sources */,
+				BA725610CF4FB0BEF31872E5 /* AnyCodable.swift in Sources */,
+				E3986F8A0981358E4F643A71 /* AppleMusicCreatePlaylistTool.swift in Sources */,
+				787E432ABF3FF16D8566AEAB /* AppleMusicLibraryTool.swift in Sources */,
+				238D8B180215892A63B98391 /* AppleMusicPlaylistTool.swift in Sources */,
+				5388B05BBA683D75A7FA3299 /* AppleMusicSearchTool.swift in Sources */,
+				3F978BF975454410AE6CB5A7 /* HTTPRequest.swift in Sources */,
+				5752D0C8AD08275868DC962C /* HTTPResponse.swift in Sources */,
+				B05893BE21310B8E32393F7D /* HTTPServer.swift in Sources */,
+				67922605F7DED365E3F9E4E7 /* JSONRPCCoder.swift in Sources */,
+				2AA3E8C7566FD1E63F58C309 /* MCPManagerApp.swift in Sources */,
+				51977898F4C88443E661A862 /* MCPRequestRouter.swift in Sources */,
+				2FD542D2F101AEDE11040764 /* MCPSession.swift in Sources */,
+				076420CF51DF6BB69164FEFC /* MCPTypes.swift in Sources */,
+				B8FC69930C5716A2B2EF0619 /* MusicKitService.swift in Sources */,
+				A42C90840646F220F1A38A1E /* ToolRegistry.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8C53B4941A896F458CFB0D67 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MCPManager.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcpmanager.app;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		942D5A70796C0C3343AC4DCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+		C356B15091A165229EB728D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MCPManager.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcpmanager.app;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		D43020FEE7BECBF174928163 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		550393C055BF2BA11646FEF2 /* Build configuration list for PBXNativeTarget "MCPManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C53B4941A896F458CFB0D67 /* Debug */,
+				C356B15091A165229EB728D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		96A5D718B356FEC040F09155 /* Build configuration list for PBXProject "MCPManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D43020FEE7BECBF174928163 /* Debug */,
+				942D5A70796C0C3343AC4DCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0B63480A1409731BD52934C3 /* Project object */;
+}
