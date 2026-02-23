@@ -1,5 +1,6 @@
 import SwiftUI
 import MusicKit
+import Network
 import os
 import Security
 
@@ -57,7 +58,7 @@ struct MenuBarDashboardView: View {
                 .font(.headline)
                 .foregroundStyle(viewModel.isRunning ? .primary : .secondary)
 
-            Text("127.0.0.1:9200")
+            Text(viewModel.headerAddressText)
                 .font(.system(.caption, design: .monospaced))
                 .foregroundStyle(.secondary)
 
@@ -120,6 +121,42 @@ struct MenuBarDashboardView: View {
                 Spacer()
                 Text("Bearer token")
                     .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            // Network toggles
+            GroupBox {
+                VStack(spacing: 6) {
+                    HStack {
+                        Text("127.0.0.1:9200")
+                            .font(.system(.caption, design: .monospaced))
+                        Spacer()
+                        Text("Localhost")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        Toggle("", isOn: $viewModel.localhostEnabled)
+                            .toggleStyle(.switch)
+                            .controlSize(.mini)
+                            .labelsHidden()
+                    }
+                    Divider()
+                    HStack {
+                        Text(viewModel.externalIPAddress.map { "\($0):9200" } ?? "No network")
+                            .font(.system(.caption, design: .monospaced))
+                            .foregroundStyle(viewModel.externalIPAddress != nil ? .primary : .tertiary)
+                        Spacer()
+                        Text("LAN")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                        Toggle("", isOn: $viewModel.externalEnabled)
+                            .toggleStyle(.switch)
+                            .controlSize(.mini)
+                            .labelsHidden()
+                    }
+                }
+            } label: {
+                Label("Network", systemImage: "network")
+                    .font(.caption2)
                     .foregroundStyle(.secondary)
             }
 
@@ -263,22 +300,40 @@ final class ServerViewModel {
     private(set) var toolCount = 7
     private(set) var bearerToken: String
 
+    var localhostEnabled = true {
+        didSet { Task { await restartServerIfNeeded() } }
+    }
+    var externalEnabled = false {
+        didSet { Task { await restartServerIfNeeded() } }
+    }
+    private(set) var externalIPAddress: String?
+
     let activityLogger = ActivityLogger()
 
-    private let httpServer = HTTPServer(port: 9200)
+    private var httpServer: HTTPServer?
     private let musicKitService = MusicKitService()
     private var router: MCPRequestRouter?
     private let logger = Logger(subsystem: "com.mcpmanager.app", category: "App")
+    private let serverPort: UInt16 = 9200
+
+    var headerAddressText: String {
+        if !isRunning { return "Stopped" }
+        if externalEnabled {
+            return "0.0.0.0:\(serverPort)"
+        }
+        return "127.0.0.1:\(serverPort)"
+    }
 
     var claudeConfigJSON: String {
         """
-        {"mcpServers":{"apple-music":{"type":"http","url":"http://localhost:9200/mcp","headers":{"Authorization":"Bearer \(bearerToken)"}}}}
+        {"mcpServers":{"apple-music":{"type":"http","url":"http://localhost:\(serverPort)/mcp","headers":{"Authorization":"Bearer \(bearerToken)"}}}}
         """
     }
 
     init() {
         bearerToken = Self.loadOrCreateToken()
         musicKitAuthorized = MusicAuthorization.currentStatus == .authorized
+        externalIPAddress = Self.getLocalIPAddress()
 
         Task {
             await requestMusicKitAuth()
@@ -300,6 +355,12 @@ final class ServerViewModel {
 
     func startServer() async {
         guard !isRunning else { return }
+        guard localhostEnabled || externalEnabled else { return }
+
+        let host: NWEndpoint.Host = externalEnabled ? .ipv4(.any) : .ipv4(.loopback)
+
+        let server = HTTPServer(host: host, port: serverPort)
+        self.httpServer = server
 
         let toolRegistry = ToolRegistry()
         await toolRegistry.registerAppleMusicTools(service: musicKitService)
@@ -307,13 +368,14 @@ final class ServerViewModel {
         self.router = router
 
         do {
-            try await httpServer.start { request in
+            try await server.start { request in
                 await router.handle(request)
             }
             isRunning = true
-            activityLogger.log("Server started on 127.0.0.1:9200")
+            let bindAddr = externalEnabled ? "0.0.0.0" : "127.0.0.1"
+            activityLogger.log("Server started on \(bindAddr):\(serverPort)")
 
-            await httpServer.setCallbacks(
+            await server.setCallbacks(
                 onConnect: { [activityLogger] clientId in
                     activityLogger.log("Connection: \(clientId)")
                 },
@@ -326,9 +388,43 @@ final class ServerViewModel {
     }
 
     func stopServer() async {
-        await httpServer.stop()
+        if let server = httpServer {
+            await server.stop()
+        }
+        httpServer = nil
         isRunning = false
         activityLogger.log("Server stopped")
+    }
+
+    func restartServerIfNeeded() async {
+        await stopServer()
+        externalIPAddress = Self.getLocalIPAddress()
+        await startServer()
+    }
+
+    // MARK: - Network Helpers
+
+    static func getLocalIPAddress() -> String? {
+        var address: String?
+        var ifaddr: UnsafeMutablePointer<ifaddrs>?
+        guard getifaddrs(&ifaddr) == 0, let firstAddr = ifaddr else { return nil }
+        defer { freeifaddrs(ifaddr) }
+
+        for ptr in sequence(first: firstAddr, next: { $0.pointee.ifa_next }) {
+            let sa = ptr.pointee.ifa_addr.pointee
+            guard sa.sa_family == UInt8(AF_INET) else { continue }
+            let name = String(cString: ptr.pointee.ifa_name)
+            guard name == "en0" || name == "en1" else { continue }
+
+            var hostname = [CChar](repeating: 0, count: Int(NI_MAXHOST))
+            if getnameinfo(ptr.pointee.ifa_addr, socklen_t(sa.sa_len),
+                           &hostname, socklen_t(hostname.count),
+                           nil, 0, NI_NUMERICHOST) == 0 {
+                address = String(cString: hostname)
+                if name == "en0" { break } // prefer en0
+            }
+        }
+        return address
     }
 
     // MARK: - Token Persistence (File)

@@ -2,8 +2,9 @@ import Foundation
 import Network
 import os
 
-/// A minimal HTTP/1.1 server using Network.framework, bound to localhost only.
+/// A minimal HTTP/1.1 server using Network.framework.
 actor HTTPServer {
+    private let host: NWEndpoint.Host
     private let port: UInt16
     private var listener: NWListener?
     private let logger = Logger(subsystem: "com.mcpmanager.app", category: "HTTPServer")
@@ -13,7 +14,8 @@ actor HTTPServer {
     var onClientConnected: (@Sendable (String) -> Void)?
     var onClientDisconnected: (@Sendable (String) -> Void)?
 
-    init(port: UInt16 = 9200) {
+    init(host: NWEndpoint.Host = .ipv4(.loopback), port: UInt16 = 9200) {
+        self.host = host
         self.port = port
     }
 
@@ -21,8 +23,10 @@ actor HTTPServer {
         self.requestHandler = handler
 
         let params = NWParameters.tcp
-        params.requiredLocalEndpoint = NWEndpoint.hostPort(host: .ipv4(.loopback), port: NWEndpoint.Port(rawValue: port)!)
-        params.acceptLocalOnly = true
+        params.requiredLocalEndpoint = NWEndpoint.hostPort(host: host, port: NWEndpoint.Port(rawValue: port)!)
+        if case .ipv4(.loopback) = host {
+            params.acceptLocalOnly = true
+        }
 
         let listener = try NWListener(using: params)
         self.listener = listener
@@ -41,7 +45,7 @@ actor HTTPServer {
 
         listener.start(queue: .global(qos: .userInitiated))
         isRunning = true
-        logger.info("MCP server starting on 127.0.0.1:\(self.port)")
+        logger.info("MCP server starting on \(String(describing: self.host)):\(self.port)")
     }
 
     func stop() {
@@ -54,7 +58,7 @@ actor HTTPServer {
     private func handleListenerState(_ state: NWListener.State) {
         switch state {
         case .ready:
-            logger.info("Server listening on 127.0.0.1:\(self.port)")
+            logger.info("Server listening on \(String(describing: self.host)):\(self.port)")
         case .failed(let error):
             logger.error("Server failed: \(error.localizedDescription)")
             isRunning = false
