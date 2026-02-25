@@ -430,8 +430,7 @@ final class ServerViewModel {
     // MARK: - Token Persistence (File)
 
     private static var tokenFileURL: URL {
-        let dir = FileManager.default.homeDirectoryForCurrentUser
-            .appendingPathComponent(".config")
+        let dir = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
             .appendingPathComponent("apple-music-mcp")
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         return dir.appendingPathComponent("token")

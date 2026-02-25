@@ -29,7 +29,7 @@ targets:
         CURRENT_PROJECT_VERSION: "1"
         SWIFT_EMIT_LOC_STRINGS: YES
         CODE_SIGN_ENTITLEMENTS: MCPManager.entitlements
-        ENABLE_APP_SANDBOX: NO
+        ENABLE_APP_SANDBOX: YES
     info:
       path: Info.plist
       properties:
@@ -39,5 +39,6 @@ targets:
     entitlements:
       path: MCPManager.entitlements
       properties:
+        com.apple.security.app-sandbox: true
         com.apple.security.network.client: true
         com.apple.security.network.server: true
